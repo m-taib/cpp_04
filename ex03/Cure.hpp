@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaib <mtaib@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 20:24:33 by mtaib             #+#    #+#             */
-/*   Updated: 2023/09/03 15:21:16 by mtaib            ###   ########.fr       */
+/*   Created: 2023/09/02 18:36:08 by mtaib             #+#    #+#             */
+/*   Updated: 2023/09/03 13:49:54 by mtaib            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef ICE_HPP
+#define ICE_HPP
 
-Dog::Dog()
-{
-	std::cout << "Dog has been constructed" << std::endl;
-	type = "Dog";
-}
+#include "AMateria.hpp"
 
-Dog::~Dog()
+class Cure : public AMateria
 {
-	std::cout << "Dog has been destructed" << std::endl;
-}
+	public :
+		Cure();
+		Cure(const Cure& rhs);
+		Cure& 	operator=(const Cure& rhs);
+		~Cure();
+		AMateria* clone() const;
+		void use(ICharacter& target);
+};
 
-Dog::Dog(const Dog& rhs)
-{
-	type = rhs.type;
-}
-
-Dog&		Dog::operator=(const Dog& rhs)
-{
-	type = rhs.type;
-	return (*this);
-}
-
-void	Dog::makeSound(void) const
-{
-	std::cout << "bark bark" << std::endl;
-}
+#endif

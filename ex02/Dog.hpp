@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaib <mtaib@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 20:24:33 by mtaib             #+#    #+#             */
-/*   Updated: 2023/09/03 15:21:16 by mtaib            ###   ########.fr       */
+/*   Created: 2023/08/31 19:46:47 by mtaib             #+#    #+#             */
+/*   Updated: 2023/09/03 16:23:25 by mtaib            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-Dog::Dog()
-{
-	std::cout << "Dog has been constructed" << std::endl;
-	type = "Dog";
-}
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-Dog::~Dog()
+class Dog : public AAnimal
 {
-	std::cout << "Dog has been destructed" << std::endl;
-}
+	public :
+		Dog();
+		~Dog();
+		Dog(const Dog& rhs);
+		void	makeSound(void);	
 
-Dog::Dog(const Dog& rhs)
-{
-	type = rhs.type;
-}
+		//operators	
+		Dog&	operator=(const Dog& rhs);
+		/*********/
+	private : 
+		Brain *_ptr;
+};
 
-Dog&		Dog::operator=(const Dog& rhs)
-{
-	type = rhs.type;
-	return (*this);
-}
-
-void	Dog::makeSound(void) const
-{
-	std::cout << "bark bark" << std::endl;
-}
+#endif

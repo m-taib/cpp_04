@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaib <mtaib@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 20:24:33 by mtaib             #+#    #+#             */
-/*   Updated: 2023/09/03 15:21:16 by mtaib            ###   ########.fr       */
+/*   Created: 2023/09/02 10:03:05 by mtaib             #+#    #+#             */
+/*   Updated: 2023/09/03 15:59:57 by mtaib            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-Dog::Dog()
-{
-	std::cout << "Dog has been constructed" << std::endl;
-	type = "Dog";
-}
+#include <iostream>
 
-Dog::~Dog()
+class Brain
 {
-	std::cout << "Dog has been destructed" << std::endl;
-}
+	public :
+		Brain();
+		virtual ~Brain();
+		Brain(const Brain& rhs);
+		std::string 	ideas[100];
+		
+		//operators 
+		Brain&		operator=(const Brain&rhs);
+};
 
-Dog::Dog(const Dog& rhs)
-{
-	type = rhs.type;
-}
-
-Dog&		Dog::operator=(const Dog& rhs)
-{
-	type = rhs.type;
-	return (*this);
-}
-
-void	Dog::makeSound(void) const
-{
-	std::cout << "bark bark" << std::endl;
-}
+#endif

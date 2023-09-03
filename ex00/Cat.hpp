@@ -6,7 +6,7 @@
 /*   By: mtaib <mtaib@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 19:47:26 by mtaib             #+#    #+#             */
-/*   Updated: 2023/08/31 20:28:33 by mtaib            ###   ########.fr       */
+/*   Updated: 2023/09/03 15:20:02 by mtaib            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@
 
 class Cat : public Animal
 {
-	Cat();
-	~Cat();
-	Cat(const Cat& rhs);
-	void	makeSound(void);
+	public :
+		Cat();
+		~Cat();
+		Cat(const Cat& rhs);
+		void	makeSound(void) const;
 
-	//operators
-	Cat&	operator=(const Cat& rhs);
+		//operators
+		Cat&	operator=(const Cat& rhs);
 
-	/*********/
+		/*********/
 };
 
 #endif

@@ -1,44 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaib <mtaib@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 11:26:42 by mtaib             #+#    #+#             */
-/*   Updated: 2023/09/03 15:17:45 by mtaib            ###   ########.fr       */
+/*   Created: 2023/09/02 18:39:26 by mtaib             #+#    #+#             */
+/*   Updated: 2023/09/03 19:16:42 by mtaib            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cure.hpp"
 
-Animal::Animal()
+Cure::Cure()
 {
-	std::cout << "Animal has been constructed" << std::endl;
-	type = "unkown";
+	std::cout << "Cure has been constructed" << std::endl;
+	type = "cure";
 }
 
-Animal::~Animal()
-{
-	std::cout << "Animal has been destructed" << std::endl;
-}
-
-Animal::Animal(const Animal& rhs)
+Cure::Cure(const Cure& rhs)
 {
 	*this = rhs;
 }
 
-Animal&		Animal::operator=(const Animal& rhs)
+Cure&	Cure::operator=(const Cure& rhs)
 {
 	type = rhs.type;
 	return (*this);
 }
 
-void	Animal::makeSound(void) const
+AMateria* Cure::clone() const
 {
+	AMateria *ptr;
 
+	ptr = new Cure();
+	return (ptr);
 }
-std::string		Animal::getType() const
+
+void	Cure::use(ICharacter& target)
 {
-	return (type);
+	std::cout << "* heals " << target.getName() << "’s wounds *";
+}
+
+Cure::~Cure()
+{
+	std::cout << "Cure has been destructed" << std::endl;
 }

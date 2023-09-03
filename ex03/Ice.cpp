@@ -1,44 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaib <mtaib@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 11:26:42 by mtaib             #+#    #+#             */
-/*   Updated: 2023/09/03 15:17:45 by mtaib            ###   ########.fr       */
+/*   Created: 2023/09/02 18:36:55 by mtaib             #+#    #+#             */
+/*   Updated: 2023/09/03 19:16:31 by mtaib            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Ice.hpp"
 
-Animal::Animal()
+Ice::Ice()
 {
-	std::cout << "Animal has been constructed" << std::endl;
-	type = "unkown";
+	std::cout << "Ice has been constructed" << std::endl;
+	type = "ice";
 }
 
-Animal::~Animal()
-{
-	std::cout << "Animal has been destructed" << std::endl;
-}
-
-Animal::Animal(const Animal& rhs)
+Ice::Ice(const Ice& rhs)
 {
 	*this = rhs;
 }
 
-Animal&		Animal::operator=(const Animal& rhs)
+Ice&	Ice::operator=(const Ice& rhs)
 {
 	type = rhs.type;
 	return (*this);
 }
 
-void	Animal::makeSound(void) const
+AMateria* Ice::clone() const
 {
+	AMateria *ptr;
 
+	ptr = new Ice();
+	return (ptr);
 }
-std::string		Animal::getType() const
+
+void	Ice::use(ICharacter& target)
 {
-	return (type);
+	std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
+}
+
+Ice::~Ice()
+{
+	std::cout << "Ice has been destructed" << std::endl;
 }

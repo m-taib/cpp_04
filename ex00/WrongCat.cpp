@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaib <mtaib@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 20:24:33 by mtaib             #+#    #+#             */
-/*   Updated: 2023/09/03 15:21:16 by mtaib            ###   ########.fr       */
+/*   Created: 2023/08/31 20:22:43 by mtaib             #+#    #+#             */
+/*   Updated: 2023/09/03 15:48:47 by mtaib            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog()
+WrongCat::WrongCat()
 {
-	std::cout << "Dog has been constructed" << std::endl;
-	type = "Dog";
+	std::cout << "Cat has been constructed" << std::endl;
+	type = "WrongCat";
 }
 
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-	std::cout << "Dog has been destructed" << std::endl;
+	std::cout << "Cat has been destructed" << std::endl;
 }
 
-Dog::Dog(const Dog& rhs)
+WrongCat::WrongCat(const WrongCat& rhs)
 {
 	type = rhs.type;
 }
 
-Dog&		Dog::operator=(const Dog& rhs)
+WrongCat&	WrongCat::operator=(const WrongCat& rhs)
 {
 	type = rhs.type;
 	return (*this);
 }
 
-void	Dog::makeSound(void) const
+void	WrongCat::makeSound(void) const
 {
-	std::cout << "bark bark" << std::endl;
+	std::cout << "Meowww" << std::endl;
 }

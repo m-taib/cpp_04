@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaib <mtaib@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 20:24:33 by mtaib             #+#    #+#             */
-/*   Updated: 2023/09/03 15:21:16 by mtaib            ###   ########.fr       */
+/*   Created: 2023/08/31 20:22:43 by mtaib             #+#    #+#             */
+/*   Updated: 2023/09/02 17:46:23 by mtaib            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog()
+Cat::Cat()
 {
-	std::cout << "Dog has been constructed" << std::endl;
-	type = "Dog";
+	std::cout << "Cat has been constructed" << std::endl;
+	type = "Cat";
+	_ptr = new Brain();
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
-	std::cout << "Dog has been destructed" << std::endl;
+	std::cout << "Cat has been destructed" << std::endl;
+	delete _ptr;
 }
 
-Dog::Dog(const Dog& rhs)
+Cat::Cat(const Cat& rhs)
+{
+	_ptr = new (Brain);
+	*this = rhs;
+}
+
+Cat&	Cat::operator=(const Cat& rhs)
 {
 	type = rhs.type;
-}
-
-Dog&		Dog::operator=(const Dog& rhs)
-{
-	type = rhs.type;
+	*(_ptr) = *(rhs._ptr);
 	return (*this);
 }
 
-void	Dog::makeSound(void) const
+void	Cat::makeSound(void)
 {
-	std::cout << "bark bark" << std::endl;
+	std::cout << "Meowww" << std::endl;
 }

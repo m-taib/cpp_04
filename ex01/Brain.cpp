@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaib <mtaib@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 20:24:33 by mtaib             #+#    #+#             */
-/*   Updated: 2023/09/03 15:21:16 by mtaib            ###   ########.fr       */
+/*   Created: 2023/09/02 11:36:19 by mtaib             #+#    #+#             */
+/*   Updated: 2023/09/03 16:06:48 by mtaib            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Brain.hpp"
 
-Dog::Dog()
+Brain::Brain()
 {
-	std::cout << "Dog has been constructed" << std::endl;
-	type = "Dog";
+	std::cout << "Brain has been constructed" << std::endl;
 }
 
-Dog::~Dog()
+Brain::~Brain()
 {
-	std::cout << "Dog has been destructed" << std::endl;
+	std::cout << "Brain has been destructed" << std::endl;
 }
 
-Dog::Dog(const Dog& rhs)
+Brain::Brain(const Brain& rhs)
 {
-	type = rhs.type;
+	*this = rhs;
 }
 
-Dog&		Dog::operator=(const Dog& rhs)
+Brain&	 Brain::operator=(const Brain& rhs)
 {
-	type = rhs.type;
+	int		i;
+	
+	i = -1;
+	while (++i < 100)
+		ideas[i] = rhs.ideas[i];
 	return (*this);
-}
-
-void	Dog::makeSound(void) const
-{
-	std::cout << "bark bark" << std::endl;
 }

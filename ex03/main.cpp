@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtaib <mtaib@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 20:24:33 by mtaib             #+#    #+#             */
-/*   Updated: 2023/09/03 15:21:16 by mtaib            ###   ########.fr       */
+/*   Created: 2023/09/02 09:55:39 by mtaib             #+#    #+#             */
+/*   Updated: 2023/09/03 16:41:43 by mtaib            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
 
-Dog::Dog()
+/*void	f()
 {
-	std::cout << "Dog has been constructed" << std::endl;
-	type = "Dog";
-}
+	int		N;
 
-Dog::~Dog()
-{
-	std::cout << "Dog has been destructed" << std::endl;
-}
+	N = 6;
+	A_Animal 	Ptr[N];
+	int		i;
 
-Dog::Dog(const Dog& rhs)
-{
-	type = rhs.type;
-}
+	i = -1;
+	while (++i < N)
+	{
+		if (i % 2)
+			Ptr[i] = Cat();
+		else
+			Ptr[i] = Dog();
+	}
+}*/
 
-Dog&		Dog::operator=(const Dog& rhs)
+int		main()
 {
-	type = rhs.type;
-	return (*this);
-}
+	
+	
 
-void	Dog::makeSound(void) const
-{
-	std::cout << "bark bark" << std::endl;
+	//f();
+	//while (1);
+	return (0);
 }
